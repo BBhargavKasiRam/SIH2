@@ -1,0 +1,12 @@
+<?xml version='1.0' ?>
+<launch>
+  <arg name="use_sim_time" default="false"/>
+
+  <!-- Clinic Demo with RViz and Fleet Adapters -->
+  <include file="$(find-pkg-share rmf_demos)/clinic.launch.xml">
+    <arg name="use_sim_time" value="$(var use_sim_time)"/>
+  </include>
+
+  <!-- Mock Robot Simulator (replaces Gazebo) -->
+  <node pkg="rmf_fleetmind_edge_ai" exec="mock_robot_sim" args="-m clinic" output="screen"/>
+</launch>

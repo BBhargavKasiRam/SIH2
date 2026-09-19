@@ -1,0 +1,6 @@
+string task_id
+string task_type
+geometry_msgs/Point pickup_location
+geometry_msgs/Point dropoff_location
+int32 priority
+float32 deadline_sec

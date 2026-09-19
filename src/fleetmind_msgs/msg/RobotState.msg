@@ -1,0 +1,11 @@
+string robot_id
+string fleet_name
+string status
+geometry_msgs/Point position
+float32 velocity
+float32 heading
+float32 battery_percentage
+string current_task_id
+int32 priority
+string waiting_for_id
+geometry_msgs/Point[] planned_path

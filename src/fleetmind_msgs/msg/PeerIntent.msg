@@ -1,0 +1,9 @@
+string robot_id
+string fleet_name
+builtin_interfaces/Time timestamp
+geometry_msgs/Pose position
+geometry_msgs/Twist velocity
+string intent
+string target_peer
+int32 priority
+float32 wait_time_sec

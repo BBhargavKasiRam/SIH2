@@ -5,7 +5,7 @@
 
   <!-- Common launch -->
   <include file="$(find-pkg-share rmf_demos)/common.launch.xml">
-    <arg name="use_sim_time" value="true"/>
+    <arg name="use_sim_time" value="$(var use_sim_time)"/>
     <arg name="viz_config_file" value ="$(find-pkg-share rmf_demos)/include/clinic/clinic.rviz"/>
     <arg name="config_file" value="$(find-pkg-share rmf_demos_maps)/clinic/clinic.building.yaml"/>
   </include>

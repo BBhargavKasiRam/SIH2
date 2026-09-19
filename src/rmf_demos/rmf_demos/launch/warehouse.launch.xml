@@ -1,0 +1,22 @@
+<?xml version='1.0' ?>
+
+<launch>
+  <arg name="use_sim_time" default="false"/>
+
+  <!-- Common launch: Schedule, Map Server, Visualizer, Supervisors, Dispatcher -->
+  <include file="$(find-pkg-share rmf_demos)/common.launch.xml">
+    <arg name="use_sim_time" value="$(var use_sim_time)"/>
+    <arg name="viz_config_file" value="$(find-pkg-share rmf_demos)/include/campus/campus.rviz"/>
+    <arg name="config_file" value="$(find-pkg-share rmf_demos_maps)/campus/campus.building.yaml"/>
+  </include>
+
+  <!-- WarehouseBot fleet adapter (reuses campus nav_graph) -->
+  <group>
+    <include file="$(find-pkg-share rmf_demos_fleet_adapter)/launch/fleet_adapter.launch.xml">
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_demos_maps)/maps/campus/nav_graphs/0.yaml" />
+      <arg name="config_file" value="$(find-pkg-share rmf_demos)/config/warehouse/warehouseBot_config.yaml"/>
+    </include>
+  </group>
+
+</launch>

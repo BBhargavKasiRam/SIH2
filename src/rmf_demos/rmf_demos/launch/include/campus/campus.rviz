@@ -53,7 +53,7 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
-        fleet_markers: true
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -65,8 +65,7 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
-        participant 0: true
-        participant location 0: true
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile

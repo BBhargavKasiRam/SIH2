@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FleetMind — Edge-AI Fleet Dashboard</title>
+    <meta name="description" content="Real-time monitoring dashboard for Edge-AI distributed AMR fleet coordination in smart warehouses.">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="url(#grad)" stroke-width="2.5" fill="none"/>
+                        <circle cx="10" cy="13" r="3" fill="#00e5ff"/>
+                        <circle cx="22" cy="13" r="3" fill="#7c4dff"/>
+                        <circle cx="16" cy="22" r="3" fill="#00e676"/>
+                        <line x1="10" y1="13" x2="22" y2="13" stroke="#ffffff30" stroke-width="1"/>
+                        <line x1="10" y1="13" x2="16" y2="22" stroke="#ffffff30" stroke-width="1"/>
+                        <line x1="22" y1="13" x2="16" y2="22" stroke="#ffffff30" stroke-width="1"/>
+                        <defs><linearGradient id="grad" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#00e5ff"/>
+                            <stop offset="100%" stop-color="#7c4dff"/>
+                        </linearGradient></defs>
+                    </svg>
+                    <h1>FleetMind</h1>
+                </div>
+                <span class="subtitle">Edge-AI Fleet Dashboard</span>
+            </div>
+            <div class="header-right">
+                <div class="connection-status" id="connectionStatus">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Connecting...</span>
+                </div>
+                <div class="fleet-summary" id="fleetSummary">
+                    <span class="summary-item"><strong id="totalRobots">0</strong> AMRs</span>
+                    <span class="summary-item"><strong id="totalFleets">0</strong> Fleets</span>
+                    <span class="summary-item"><strong id="activeAlerts">0</strong> Alerts</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Alert Banner -->
+        <div class="alert-banner" id="alertBanner" style="display: none;">
+            <div class="alert-content" id="alertContent"></div>
+        </div>
+
+        <!-- Main Grid -->
+        <main class="main-grid">
+            <!-- Robot Cards -->
+            <section class="robot-section">
+                <h2 class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="3" y="6" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="7" cy="11" r="1.5" fill="currentColor"/>
+                        <circle cx="13" cy="11" r="1.5" fill="currentColor"/>
+                        <line x1="8" y1="3" x2="12" y2="3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Autonomous Mobile Robots
+                </h2>
+                <div class="robot-grid" id="robotGrid">
+                    <div class="empty-state">
+                        <p>Waiting for robot telemetry...</p>
+                        <div class="pulse-ring"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Safety & Coordination Panel -->
+            <section class="safety-section">
+                <h2 class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 2L18 7V13L10 18L2 13V7L10 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                    Safety Decisions &amp; Coordination
+                </h2>
+                <div class="safety-list" id="safetyList">
+                    <div class="empty-state-small">
+                        <p>No active safety decisions</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fleet Diagnostics -->
+            <section class="diagnostics-section">
+                <h2 class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <line x1="6" y1="7" x2="14" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="6" y1="10" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="6" y1="13" x2="10" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Fleet Diagnostics
+                </h2>
+                <pre class="diagnostics-output" id="diagnosticsOutput">Awaiting diagnostic report...</pre>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>FleetMind — SIH 26123 — Edge-AI Distributed Fleet Coordination</span>
+            <span>Monitoring Only • Robots operate independently</span>
+        </footer>
+    </div>
+
+    <script src="/dashboard.js"></script>
+</body>
+</html>

@@ -64,14 +64,7 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
-        participant 13: true
-        participant 14: true
-        participant 15: true
-        participant 16: true
-        participant location 13: true
-        participant location 14: true
-        participant location 15: true
-        participant location 16: true
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -83,7 +76,7 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
-        fleet_markers: true
+        {}
       Topic:
         Depth: 10
         Durability Policy: Volatile
